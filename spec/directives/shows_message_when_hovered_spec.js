@@ -1,14 +1,14 @@
-describe("directive: shows-message-when-hovered (vanilla jasmine, coffeescript)", function() {
+describe("directive: shows-message-when-hovered", function() {
 
   beforeEach(function() {
     module("app");
   });
 
   beforeEach(inject(function($rootScope, $compile) {
-    this.directiveMessage = 'ralph was here';
+    this.directiveMessage = 'on enter message';
     this.html = "<div shows-message-when-hovered message='" + this.directiveMessage + "'></div>";
     this.scope = $rootScope.$new();
-    this.scope.message = this.originalMessage = 'things are looking grim';
+    this.scope.message = this.originalMessage = 'default message';
     this.elem = $compile(this.html)(this.scope);
   }));
 

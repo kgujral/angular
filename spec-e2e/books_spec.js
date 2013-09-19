@@ -8,27 +8,21 @@ describe('my angular app', function () {
     ptor = protractor.getInstance();
 
     beforeEach(function () {
-      ptor.get('/list-of-books');
+      ptor.get('/#/list-of-books');
     });
 
     it('should show me a list of books', function() {
-      ptor.findElement(
-        protractor.By.repeater('book in books').row(1)).
-        getText().then(function(text) {
+      ptor.findElement(protractor.By.repeater('book in books').row(1)).getText().then(function(text) {
           expect(text).toEqual('Great Expectations by Dickens');
-        });
+      });
 
-      ptor.findElement(
-        protractor.By.repeater('book in books').row(2)).
-        getText().then(function(text) {
+      ptor.findElement(protractor.By.repeater('book in books').row(2)).getText().then(function(text) {
           expect(text).toEqual('Foundation Series by Asimov');
-        });
+      });
 
-      ptor.findElement(
-        protractor.By.repeater('book in books').row(3)).
-        getText().then(function(text) {
+      ptor.findElement(protractor.By.repeater('book in books').row(3)).getText().then(function(text) {
           expect(text).toEqual('Treasure Island by Stephenson');
-        });
+      });
     });
   });
 });

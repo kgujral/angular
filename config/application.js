@@ -8,9 +8,9 @@
 module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application', {
 
   // html5push state simulation
-  server: {
-    pushState: true
-  },
+  //server: {
+  //  pushState: true
+  //},
 
   // configure lineman to load additional angular related npm tasks
   loadNpmTasks: [

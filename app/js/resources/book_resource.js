@@ -1,3 +1,3 @@
-angular.module("app").factory("BookResource", function($q, $resource) {
-  return $resource('/books');
+angular.module("app").factory("BookResource", function($q, $resource, UrlService) {
+  return $resource(UrlService.booksUrl());
 });

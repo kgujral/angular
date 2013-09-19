@@ -1,7 +1,7 @@
-angular.module("app").factory("BookService", function($q, $http) {
+angular.module("app").factory("BookService", function($q, $http, UrlService) {
 
   var getBooks = function() {
-    return $http.get('/books');
+    return $http.get(UrlService.booksUrl());
   };
 
   return { getBooks: getBooks };
